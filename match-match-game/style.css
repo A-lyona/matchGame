@@ -1,0 +1,617 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.tablink {
+  background-color: rgb(124, 124, 124);
+  color: rgb(0, 0, 0);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", sans-serif;
+  width: 25%;
+  height: 80px;
+}
+
+.tablink:hover {
+  background-color: rgb(92, 91, 91);
+}
+
+.general {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ........................................................ПРО ИГРУ ....................................................*/
+
+.tabcontent {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  max-width: 1920px;
+  width: 100%;
+  height: 100vh;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  height: 750px;
+  width: 1300px;
+  background: #89ac8b; 
+  box-shadow: 0 0 20px #000; 
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", sans-serif;
+  color: #000;
+  margin-top: 10px;
+}
+
+.text1 {
+  font-size: 24px;
+  color: #000;
+  padding: 30px 30px;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+.text2 {
+  font-size: 24px;
+  color: #000;
+  padding: 10px 30px;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+.text3 {
+  font-size: 24px;
+  color: #000;
+  padding: 20px 30px;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+
+.older {
+  list-style: none;
+  padding-left: 30px;
+  width: 830px;
+}
+
+.older li {
+  border-bottom: dashed 2px #3f806f;
+  margin-top: 30px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  text-decoration: none;
+  padding: 20px 20px;
+  display: block;
+  color: #000000;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 20px;
+}
+
+.buttonRegister {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  background: #89ac8b;
+}
+
+#aboutGame {
+  background-color: #89ac8b;
+}
+
+#game {
+  background-color: #dbdbaa;
+}
+
+#settings {
+  background-color: #ac8989;
+}
+
+#bestScore {
+  background-color: #8d89ac;
+}
+
+/* ...................................................................ИГРА .................................................*/
+
+.sidenav p {
+  position: absolute; 
+  left: 130px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 250px;
+  text-decoration: none; 
+  text-align: center;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 30px; 
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.play {
+  top: 80px;
+  width: 100px;
+  background-color: #006602;
+}
+
+.stop {
+  top: 80px;
+  width: 100px;
+  margin-left: 120px;
+  background-color: #961107;
+}
+
+.timers {
+  top: 200px;
+  width: 220px;
+  text-align: center;
+  color: #000000;
+}
+
+.pause {
+  padding-left: 9px;
+  top: 300px;
+  width: 220px;
+  background-color: #004f8f;
+}
+
+.gameContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 830px;
+  width: 940px;
+  box-shadow: 0 0 20px #000; 
+  background-color: #dbdbaa;
+}
+
+.gameContent2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 750px;
+  width: 740px;
+  box-shadow: 0 0 20px #000; 
+}
+
+.chips {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 800px;
+  width: 890px;
+  margin-top: 15px;
+}
+
+.chips2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 750px;
+  width: 710px;
+  margin: 15px 15px;
+}
+
+.pole {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+  width: 890px;
+}
+
+.pole2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+  width: 710px;
+}
+
+.imag {
+  height: 90px;
+  width: 90px;
+  cursor: pointer;
+  box-shadow: 0 0 14px #000; 
+  background-image: url("assets/31.png");
+}
+
+.well {
+  box-shadow: inset #068a11 0 0 10px 5px;
+}
+
+.poorly {
+  box-shadow: inset #ff0000 0 0 10px 5px;
+}
+
+/* ...........................................................................НАСТРОЙКИ...................................................... */
+
+.settingsContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1700px;
+  height: 800px;
+}
+
+.complexity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 750px;
+  box-shadow: 0 0 20px #000; 
+}
+
+.complexContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  height: 600px;
+}
+
+.complexTitle {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+}
+
+.complexTitleText {
+  font-weight: bold;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 40px; 
+  line-height: 80px;
+  text-align: center;
+  color: #000000;
+}
+
+.complexTitle2 {
+  width: 400px;
+  height: 200px;
+} 
+
+.complexTitleText2 {
+  font-weight: bold;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 40px; 
+  line-height: 65px;
+  text-align: center;
+  color: #000000;
+}
+
+.choose {
+  display: block;
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 30px; 
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0,0,0,.5);
+  user-select: none;
+  border: 2px solid rgb(80,32,0);
+  border-radius: 5px;
+  outline: none;
+  background: #ac8989;
+  box-shadow:
+   0 8px rgb(86,38,6),
+   0 3px 15px rgba(0,0,0,.4),
+   inset 0 1px rgba(255,255,255,.3),
+   inset 0 0 3px rgba(255,255,255,.5);
+  cursor: pointer;
+}
+
+.cho {
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 30px; 
+  color: #ffffff;
+  text-decoration: none;
+  background: rgb(86,38,6);
+  box-shadow:
+   0 1px rgb(86,38,6),
+   0 1px 6px rgba(0,0,0,.4),
+   inset 0 1px rgba(255,255,255,.3),
+   inset 0 0 3px rgba(255,255,255,.5);
+  -webkit-transform: translate(0, 4px);
+  transform: translate(0, 4px);
+}
+
+.shirt {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 100px;
+  border: 2px solid rgb(80,32,0);
+  cursor: pointer;
+}
+
+/* ................................................................ЛУЧШИЕ РЕЗУЛЬТАТЫ .............................................*/
+
+.scoreContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 750px;
+  width: 1000px;
+  background: #8d89ac; 
+  box-shadow: 0 0 20px #000; 
+}
+
+h2 {
+  font-size: 43px;
+  font-weight: bold;
+  font-family: "Monotype Corsiva";
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+
+.bestContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 650px;
+  width: 846px;
+  padding: 20px 0 20px 0;
+  margin-bottom: 20px;
+  background-color: #8680ad;
+  box-shadow: 0 0 20px #000; 
+}
+
+.bestOne {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  width: 750px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #000;
+}
+
+.one {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 195px;
+  height: 47px;
+}
+
+.oneBox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 160px;
+  height: 23px;
+  color: #000;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+.one2 {
+  width: 100px;
+  height: 35px;
+}
+
+.one2Text {
+  font-size: 18px;
+  padding-top: 5px;
+  color: #000;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+/*.............................................................. МОДАЛЬНОЕ ОКНО - РЕГИСТРАЦИЯ ..................................*/
+
+.modal2 {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0, 0, 0, 0.603); 
+}
+
+.modalContent2 {
+  background-color: #FCFCFC;
+  border: 1px solid rgb(122, 121, 121);
+  width: 479px;
+  max-height: 598px;
+  margin: 10% auto;
+  display: flex; 
+  flex-direction: column;
+}
+
+.close2 {
+  color: rgb(0, 0, 0);
+  margin-left: auto;
+  margin-right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.inform3 {
+  display: flex;
+  justify-content: center;
+  width: 479px;
+}
+
+.inform2Title {
+  font-family: "Comic Sans MS", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 145%;
+  text-align: center;
+  color: #000000;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 28px;
+  margin-bottom: 40px;
+  max-width: 399px;
+  height: 436px;
+  margin-left: 40px;
+}
+
+.uname {
+  font-family: "Comic Sans MS", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  font-size: 16px;
+  line-height: 145%;
+}
+
+input[type=email], input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=email]:focus, input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.containerButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cancel { 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 180px;
+  height: 66px;
+  font-family: "Comic Sans MS", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #691111;
+}
+
+.submit { 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 180px;
+  height: 66px;
+  font-family: "Comic Sans MS", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+#send {
+  background-color: #015e05;
+}
+
+#send.invalid {
+  background-color: #D3D3D3;
+}
+
+/*.............................................................. МОДАЛЬНОЕ ОКНО - ОКОНЧАНИЕ ИГРЫ ..................................*/
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6); 
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  height: 300px;
+  color: #000;
+}
+
+.butOk {
+  background-color: #8d89ac;
+  font-family: "Comic Sans MS", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 25%;
+  margin-top: 30px;
+  font-size: 24px;
+  width: 200px;
+  height: 60px;
+}
+
+.butOk:hover {
+  background-color: #685fb1;
+}

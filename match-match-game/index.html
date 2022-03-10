@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.gstatic.com" rel="preconnect" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap" rel="stylesheet" />
+        <link rel="shortcut icon" href="assets/100.png" type="image/x-icon">
+        <link href="style.css" rel="stylesheet" />
+        <title>match-game</title>
+    </head>
+    <body>
+        <div class="general">
+            <div class="buttons">
+                <button class="tablink" onclick="openField('aboutGame', this, '#89ac8b')" id="defaultOpen">About Game</button>
+                <button class="tablink" onclick="openField('game', this, '#dbdbaa')">Game</button>
+                <button class="tablink" onclick="openField('settings', this, '#ac8989')">Settings</button>
+                <button class="tablink" onclick="openField('bestScore', this, '#8d89ac')">Best score</button>
+            </div>
+            <div id="aboutGame" class="tabcontent">
+                <div class="aboutContent">
+                    <div class="title">
+                        <h1>Match Game</h1>
+                    </div>
+                    <p class="text1">Train your memory with a memory game. If you like puzzles or other quizzes, this memory game is for you.</p>
+                    <p class="text2">The playing field consists of cards with different patterns on the back. Before the start of the game session, the player is shown the location of all paired cards, after 30 seconds they are hidden. The victory is counted when all pairs of cards are found.</p>
+                    <p class="text3">Before starting the game, follow these steps:</p>
+                    <ul class="older">
+                        <li>&#10004;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="buttonRegister" id="myBtn2">Register</button>&nbsp;&nbsp;new player in game.</li>
+                        <!-- Modal -->
+                        <div id="myModal2" class="modal2">
+                            <div class="modalContent2">
+                                <span class="close2">&times;</span>
+                                <div class="inform3">
+                                    <p class="inform2Title">Please, fill in this form<br>to create an account</p>
+                                </div>
+                                <div class="container">
+                                    <form>	
+                                        <div class="container2">
+                                            <label class="uname"><p>E-mail</p></label>
+                                            <input type="email" name="email"  id="email" required pattern="[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])">
+                                            <label class="uname"><p>First name</p></label>
+                                            <input type="text" name="psw" id="login" required pattern="[A-Za-z]+">
+                                            <label class="uname"><p>Last name</p></label>
+                                            <input type="text" name="psw-repeat" id="subject" required pattern="[A-Za-z]+">
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
+                                                <span class="uname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remember me</span>
+                                            </label>
+                                            <div class="containerButton">
+                                                <button class="cancel" type="reset">Cancel</button>					  
+                                                <button class="submit invalid" id="send">Register now</button>
+                                            </div>	
+                                        </div>							  
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <li>&#10004;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure your game settings.</li>
+                        <li>&#10004;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start you new game! Remember card positions and match it before times up.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="game" class="tabcontent">
+                <div class="sidenav">
+                    <p class="play" id="start">Start</p>
+                    <p class="stop" id="stop">Stop</p>
+                    <p class="timers">00 : 00</p>
+                    <p class="pause" id="myBtn">Pause</p>
+                </div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <p class="text2">Congratulations!</p>
+                        <p class="text2">You completed the game.</p>
+                        <p class="text2">Click OK to go to the BestScores page.</p>
+                        <button class="butOk" onclick="openField('bestScore', this, '#8d89ac')">OK</button>
+                    </div>   
+                </div>
+                <div class="gameContent">
+                    <div class="chips">
+                        <div class="pole">
+                            <div class="imag picChips" data-kard="nec1"></div>
+                            <div class="imag picChips" data-kard="nec2"></div>
+                            <div class="imag picChips" data-kard="nec3"></div>
+                            <div class="imag picChips" data-kard="nec4"></div>
+                            <div class="imag picChips" data-kard="nec5"></div>
+                            <div class="imag picChips" data-kard="nec6"></div>
+                        </div>
+                        <div class="pole">
+                            <div class="imag picChips" data-kard="nec7"></div>
+                            <div class="imag picChips" data-kard="nec8"></div>
+                            <div class="imag picChips" data-kard="nec9"></div>
+                            <div class="imag picChips" data-kard="nec10"></div>
+                            <div class="imag picChips" data-kard="nec11"></div>
+                            <div class="imag picChips" data-kard="nec12"></div>
+                        </div>
+                        <div class="pole">
+                            <div class="imag picChips" data-kard="nec13"></div>
+                            <div class="imag picChips" data-kard="nec14"></div>
+                            <div class="imag picChips" data-kard="nec15"></div>
+                            <div class="imag picChips" data-kard="nec16"></div>
+                            <div class="imag picChips" data-kard="nec17"></div>
+                            <div class="imag picChips" data-kard="nec18"></div>
+                        </div>
+                        <div class="pole">
+                            <div class="imag picChips" data-kard="nec19"></div>
+                            <div class="imag picChips" data-kard="nec20"></div>
+                            <div class="imag picChips" data-kard="nec21"></div>
+                            <div class="imag picChips" data-kard="nec22"></div>
+                            <div class="imag picChips" data-kard="nec23"></div>
+                            <div class="imag picChips" data-kard="nec24"></div>
+                        </div>
+                        <div class="pole">
+                            <div class="imag picChips" data-kard="nec25"></div>
+                            <div class="imag picChips" data-kard="nec26"></div>
+                            <div class="imag picChips" data-kard="nec27"></div>
+                            <div class="imag picChips" data-kard="nec28"></div>
+                            <div class="imag picChips" data-kard="nec29"></div>
+                            <div class="imag picChips" data-kard="nec30"></div>
+                        </div>
+                        <div class="pole">
+                            <div class="imag picChips" data-kard="nec31"></div>
+                            <div class="imag picChips" data-kard="nec32"></div>
+                            <div class="imag picChips" data-kard="nec33"></div>
+                            <div class="imag picChips" data-kard="nec34"></div>
+                            <div class="imag picChips" data-kard="nec35"></div>
+                            <div class="imag picChips" data-kard="nec36"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gameContent2">
+                    <div class="chips2">
+                        <div class="pole2">
+                            <div class="imag picChips" data-kard="nec1"></div>
+                            <div class="imag picChips" data-kard="nec2"></div>
+                            <div class="imag picChips" data-kard="nec3"></div>
+                            <div class="imag picChips" data-kard="nec4"></div>
+                        </div>
+                        <div class="pole2">
+                            <div class="imag picChips" data-kard="nec5"></div>
+                            <div class="imag picChips" data-kard="nec6"></div>
+                            <div class="imag picChips" data-kard="nec7"></div>
+                            <div class="imag picChips" data-kard="nec8"></div>
+                        </div>
+                        <div class="pole2">
+                            <div class="imag picChips" data-kard="nec9"></div>
+                            <div class="imag picChips" data-kard="nec10"></div>
+                            <div class="imag picChips" data-kard="nec11"></div>
+                            <div class="imag picChips" data-kard="nec12"></div>
+                        </div>
+                        <div class="pole2">
+                            <div class="imag picChips" data-kard="nec13"></div>
+                            <div class="imag picChips" data-kard="nec14"></div>
+                            <div class="imag picChips" data-kard="nec15"></div>
+                            <div class="imag picChips" data-kard="nec16"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="settings" class="tabcontent">
+                <div class="settingsContent">
+                    <div class="complexity">
+                        <div class="complexContent">
+                            <div class="complexTitle">
+                                <p class="complexTitleText">Please,</p>
+                                <p class="complexTitleText">select the option you want.</p>
+                            </div>
+                            <button class="choose" id="one">4x4</button>
+                            <button class="cho choose" id="two">6x6</button>
+                            <button class="choose">in process</button>
+                        </div>
+                    </div>
+                    <div class="complexity">
+                        <div class="complexContent">
+                            <div class="complexTitle2">
+                                <p class="complexTitleText2">Please,</p>
+                                <p class="complexTitleText2">select the option you want.</p>
+                            </div>
+                            <img src="assets/31.png" alt="picture" class="shirt">
+                        </div>
+                    </div>
+                    <div class="complexity">
+                        <div class="complexContent">
+                            <div class="complexTitle">
+                                <p class="complexTitleText">Please,</p>
+                                <p class="complexTitleText">select the option you want.</p>
+                            </div>
+                            <button class="choose" id="six">Animal</button>
+                            <button class="choose" id="seven">Food</button>
+                            <button class="cho choose" id="eight">Plant</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bestScore" class="tabcontent">
+                <div class="scoreContent">
+                    <div class="title">
+                        <h2>Best players</h2>
+                    </div>
+                    <div class="bestContent">
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/80.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Nicci Troiani</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 456</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/99.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>George Fields</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 358</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/97.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Jones Dermot</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 211</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/98.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Jane Doe</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 169</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/99.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Ethan Brown</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 135</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/47.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Caroline Davis</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 98</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/51.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Archer Moore</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 72</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/54.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Grace Williams</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 56</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/99.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Lucas Clark</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 14</p>
+                            </div>
+                        </div>
+                        <div class="bestOne">
+                            <div class="one">
+                                <img src="assets/42.png" alt="picture">
+                                <div class="oneBox">
+                                    <p>Zoey Morris</p>
+                                </div>
+                            </div>
+                            <div class="one2">
+                                <p class="one2Text">Score: 8</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
